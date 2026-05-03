@@ -4,8 +4,8 @@ import { regex, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const loginSchema = z.object({
-    fullName: z.string().min(1, "กรุณากรอกชื่อ-นามสกุล").regex(/^[a-zA-Z]+ [a-zA-Z]+$/, "ข้อมูลไม่ถูกต้อง"),
-    userName: z.string().min(1, "กรุณากรอกชื่อผู้ใช้").regex(/^[a-zA-Z0-9]{3,12}$/, "ข้อมูลไม่ถูกต้อง"),
+    fullName: z.string().min(1, "กรุณากรอกชื่อ-นามสกุล").regex(/^[a-zA-Z]+ [a-zA-Z]+$/, "ชื่อ-นามสกุลไม่ถูกต้อง"),
+    userName: z.string().min(1, "กรุณากรอกชื่อผู้ใช้").regex(/^[a-zA-Z0-9]{3,12}$/, "ชื่อผู้ใช้ไม่ถูกต้อง"),
     email: z.string().min(1, "กรุณากรอกอีเมล").email("อีเมลไม่ถูกต้อง"),
     //รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร
     password: z.string().min(8, "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"),
