@@ -37,13 +37,13 @@ const router = createBrowserRouter([
         path: "*",
         element: <ErrorPage />,
       },
+      {
+        path: "/login",
+        element: <LoginPage />
+      }
     ],
-  },
-  {
-    path: "/login",
-    element: <LoginPage />
   }
-], 
-{ basename: "/ccwe1-app-hook-form"},);
+],
+  { basename: "/ccwe1-app-hook-form" },);
 
 export default router;

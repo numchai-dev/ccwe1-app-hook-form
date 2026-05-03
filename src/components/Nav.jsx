@@ -8,7 +8,8 @@ export default function NavBar() {
   return (
     <nav>
       <NavLink to="/">Shop</NavLink> |&nbsp;
-      <NavLink to="/cart">Cart ({cartCount})</NavLink>
+      <NavLink to="/cart">Cart ({cartCount})</NavLink> |&nbsp;
+      <NavLink to="/login">Login</NavLink>
     </nav>
   );
 }
