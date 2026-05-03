@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import Cart from "../pages/Cart";
+import LoginPage from "../pages/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -14,18 +15,18 @@ const router = createBrowserRouter([
         index: true,
         element: <ProductList />,
         loader: async () => {
-          // fetch('https://dummyjson.com/products')
-          // ... ทำเพิ่มตรงนี้
-          return null;
+          const response = await fetch('https://dummyjson.com/products');
+          const data = await response.json();
+          return data.products;
         },
       },
       {
         path: "product/:id",
         element: <ProductDetail />,
         loader: async ({ params }) => {
-          // fetch(`https://dummyjson.com/products/${params.id}`)
-          // ... ทำเพิ่มตรงนี้
-          return null;
+          const response = await fetch(`https://dummyjson.com/product/${params.id}`)
+          const data = await response.json();
+          return data;
         },
       },
       {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/login",
+    element: <LoginPage />
+  }
 ]);
 
 export default router;
